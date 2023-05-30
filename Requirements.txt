@@ -1,0 +1,14 @@
+fisica cinematica da queda livre
+fisica cinematia do projetil/bala
+considere as forças de fricção e atrito
+considere colisões
+fisica dda flutuação
+saltos com fisica e aceleração
+
+
+um menu de entrada
+ecrã de tamanho 800x600
+utilização de imagens, som , rato e teclado
+deverá também apresentar pontuação
+
+documentado
