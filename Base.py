@@ -16,7 +16,7 @@ BLACK = (0,0,0)
 gameLoop = True
 
 #INITIALIZE GAME WINDOW
-screen = pygame.display.set_mode((surfaceWidth, surfaceHeight))
+surface = pygame.display.set_mode((surfaceWidth, surfaceHeight))
 pygame.display.set_caption("IMFJ2 Project")
 
 #INITIALIZE CLOCK
@@ -39,7 +39,7 @@ while gameLoop:
                 sys.exit()
 
     #FILL SCREEN WITH BLACK
-    screen.fill(BLACK)
+    surface.fill(BLACK)
 
     #FLIP THE DISPLAY
     pygame.display.flip()
