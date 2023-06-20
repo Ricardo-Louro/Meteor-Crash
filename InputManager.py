@@ -1,7 +1,7 @@
 import pygame
 from Basic_Functions import ExitGame
 
-def InputManager_Gameplay():
+def Gameplay():
     for event in pygame.event.get():
         
         #HANDLE CLICKING THE X ON THE WINDOW

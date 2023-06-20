@@ -1,7 +1,6 @@
 #IMPORTS
 import pygame
-
-from InputManager_Gameplay import InputManager_Gameplay
+import InputManager
 
 #INITIALIZE PYGAME
 pygame.init()
@@ -27,7 +26,7 @@ clock = pygame.time.Clock()
 #GAME LOOP
 while gameLoop: 
     #HANDLE EVENTS
-    InputManager_Gameplay()
+    InputManager.Gameplay()
 
     #FILL SCREEN WITH BLACK
     surface.fill(BLACK)
