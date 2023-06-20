@@ -1,13 +1,15 @@
 #IMPORTS
 import pygame
-import sys
+
+from InputManager_Gameplay import InputManager_Gameplay
 
 #INITIALIZE PYGAME
 pygame.init()
 
 #SURFACE VARIABLES
-surfaceWidth = 1500
-surfaceHeight = 900
+surfaceWidth = 1400
+#SET HEIGHT AT 950 INSTEAD OF 1000 TO BETTER FIT THE MONITOR
+surfaceHeight = 950
 
 #COLOUR VARIABLES
 BLACK = (0,0,0)
@@ -23,20 +25,9 @@ pygame.display.set_caption("IMFJ2 Project")
 clock = pygame.time.Clock()
 
 #GAME LOOP
-while gameLoop:
-    
+while gameLoop: 
     #HANDLE EVENTS
-    for event in pygame.event.get():
-        
-        if event.type == pygame.QUIT:
-            pygame.quit()
-            sys.exit()
-
-        #HANDLE INPUTS
-        elif event.type == pygame.KEYDOWN:
-            if event.key == pygame.K_ESCAPE:
-                pygame.quit()
-                sys.exit()
+    InputManager_Gameplay()
 
     #FILL SCREEN WITH BLACK
     surface.fill(BLACK)
