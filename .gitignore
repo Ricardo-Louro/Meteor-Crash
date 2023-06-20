@@ -51,6 +51,9 @@ coverage.xml
 .pytest_cache/
 cover/
 
+# Rider IDE
+.idea/
+
 # Translations
 *.mo
 *.pot
