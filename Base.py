@@ -2,6 +2,9 @@
 import pygame
 import InputManager
 
+from Player import Player
+
+
 #INITIALIZE PYGAME
 pygame.init()
 
@@ -23,6 +26,8 @@ pygame.display.set_caption("IMFJ2 Project")
 #INITIALIZE CLOCK
 clock = pygame.time.Clock()
 
+player = Player()
+
 #GAME LOOP
 while gameLoop: 
     #HANDLE EVENTS
@@ -30,6 +35,7 @@ while gameLoop:
 
     #FILL SCREEN WITH BLACK
     surface.fill(BLACK)
+    player.Draw(surface)
 
     #FLIP THE DISPLAY
     pygame.display.flip()
