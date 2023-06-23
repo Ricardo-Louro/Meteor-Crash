@@ -1,7 +1,7 @@
 import pygame
 from Basic_Functions import ExitGame
 
-def Gameplay():
+def Gameplay(player):
     for event in pygame.event.get():
         
         #HANDLE CLICKING THE X ON THE WINDOW
@@ -14,3 +14,10 @@ def Gameplay():
             if event.key == pygame.K_ESCAPE:
                 #QUIT THE GAME
                 ExitGame()
+
+
+        pressed = pygame.key.get_pressed()
+        if pressed[pygame.K_a]:
+            player.Move("left")
+        if pressed[pygame.K_d]:
+            player.Move("right")

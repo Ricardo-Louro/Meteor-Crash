@@ -12,7 +12,7 @@ class Player:
         else:
             moveSpeed = self.moveSpeed
         
-        self.position = (position[0] + moveSpeed, position[1])
+        self.position = (self.position[0] + moveSpeed, self.position[1])
 
     def Draw(self, surface):
         pygame.draw.circle(surface, self.colour, self.position, self.radius)

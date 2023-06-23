@@ -31,7 +31,7 @@ player = Player()
 #GAME LOOP
 while gameLoop: 
     #HANDLE EVENTS
-    InputManager.Gameplay()
+    InputManager.Gameplay(player)
 
     #FILL SCREEN WITH BLACK
     surface.fill(BLACK)
