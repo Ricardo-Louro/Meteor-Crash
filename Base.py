@@ -37,6 +37,8 @@ while gameLoop:
     surface.fill(BLACK)
     player.Draw(surface)
 
+    print(player.mass)
+
     #FLIP THE DISPLAY
     pygame.display.flip()
 

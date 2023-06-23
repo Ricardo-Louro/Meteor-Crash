@@ -17,7 +17,7 @@ def Gameplay(player):
 
 
         pressed = pygame.key.get_pressed()
-        if pressed[pygame.K_a]:
-            player.Move("left")
-        if pressed[pygame.K_d]:
-            player.Move("right")
+        if pressed[pygame.K_w]:
+            player.Move("up")
+        if pressed[pygame.K_s]:
+            player.Move("down")
