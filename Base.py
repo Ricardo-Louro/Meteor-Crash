@@ -31,9 +31,8 @@ player = Player()
 #GAME LOOP
 while gameLoop: 
     #HANDLE EVENTS
-    InputManager.Gameplay(player)
-
     player.GroundCheck(surfaceHeight)
+    InputManager.Gameplay(player)
     player.Move()
 
     #FILL SCREEN WITH BLACK

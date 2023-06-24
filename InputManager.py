@@ -15,11 +15,14 @@ def Gameplay(player):
                 #QUIT THE GAME
                 ExitGame()
 
+            if event.key == pygame.K_SPACE and player.grounded:
+                player.velocity_y = -50
+
 
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_a]:
-            player.force_applied = -1000
+            player.force_applied = -player.speed
         if pressed[pygame.K_d]:
-            player.force_applied = 1000
+            player.force_applied = player.speed
         if not(pressed[pygame.K_d] or pressed[pygame.K_a]):
             player.force_applied = 0
