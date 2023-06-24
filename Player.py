@@ -1,3 +1,4 @@
+import pygame
 from Object import Object
 
 class Player(Object):
@@ -8,6 +9,8 @@ class Player(Object):
     mass = 2
     speed = 1500
 
+    score = 0
+
     force_applied = 0
 
     bulletList = []
@@ -15,6 +18,7 @@ class Player(Object):
     def __init__(self):
         super().__init__()
         self.normal_force = self.mass * self.gravity
+        self.lastBulletTime = pygame.time.get_ticks()
         
             
     def Move(self):

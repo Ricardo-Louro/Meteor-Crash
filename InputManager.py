@@ -3,6 +3,7 @@ from Basic_Functions import ExitGame
 from Bullet import Bullet
 
 def Gameplay(player):
+    
     for event in pygame.event.get():
         
         #HANDLE CLICKING THE X ON THE WINDOW
@@ -19,9 +20,9 @@ def Gameplay(player):
             if event.key == pygame.K_w and player.grounded:
                 player.velocity_y = -50
 
-            if event.key == pygame.K_SPACE:
+            if event.key == pygame.K_SPACE and pygame.time.get_ticks() >= player.lastBulletTime + 500:
                 player.bulletList.append(Bullet(player))
-
+                player.lastBulletTime = pygame.time.get_ticks()
 
         pressed = pygame.key.get_pressed()
         if pressed[pygame.K_a]:
