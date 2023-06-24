@@ -33,11 +33,12 @@ while gameLoop:
     #HANDLE EVENTS
     InputManager.Gameplay(player)
 
+    player.GroundCheck(surfaceHeight)
+    player.Move()
+
     #FILL SCREEN WITH BLACK
     surface.fill(BLACK)
     player.Draw(surface)
-
-    print(player.mass)
 
     #FLIP THE DISPLAY
     pygame.display.flip()
