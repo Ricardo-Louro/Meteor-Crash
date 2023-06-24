@@ -3,6 +3,8 @@ import pygame
 import InputManager
 
 from Player import Player
+from Meteor import Meteor
+from Bullet import Bullet
 
 
 #INITIALIZE PYGAME
@@ -34,10 +36,14 @@ while gameLoop:
     player.GroundCheck(surfaceHeight)
     InputManager.Gameplay(player)
     player.Move()
+    for bullet in player.bulletList:
+        bullet.Move()
 
     #FILL SCREEN WITH BLACK
     surface.fill(BLACK)
     player.Draw(surface)
+    for bullet in player.bulletList:
+        bullet.Draw(surface)
 
     #FLIP THE DISPLAY
     pygame.display.flip()

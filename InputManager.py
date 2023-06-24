@@ -1,5 +1,6 @@
 import pygame
 from Basic_Functions import ExitGame
+from Bullet import Bullet
 
 def Gameplay(player):
     for event in pygame.event.get():
@@ -15,8 +16,11 @@ def Gameplay(player):
                 #QUIT THE GAME
                 ExitGame()
 
-            if event.key == pygame.K_SPACE and player.grounded:
+            if event.key == pygame.K_w and player.grounded:
                 player.velocity_y = -50
+
+            if event.key == pygame.K_SPACE:
+                player.bulletList.append(Bullet(player))
 
 
         pressed = pygame.key.get_pressed()

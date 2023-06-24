@@ -1,4 +1,3 @@
-import pygame
 from Object import Object
 
 class Player(Object):
@@ -6,12 +5,12 @@ class Player(Object):
     moveSpeed = 10
     colour = (102,255,102)
     radius = 20
-    mass = 5
-    speed = 3000
+    mass = 2
+    speed = 1500
 
     force_applied = 0
 
-    time = 1/60
+    bulletList = []
 
     def __init__(self):
         super().__init__()
@@ -61,6 +60,3 @@ class Player(Object):
 
         #UPDATE POSITION
         self.position = (self.position[0] + self.velocity_x, self.position[1] + self.velocity_y)
-
-    def Draw(self, surface):
-        pygame.draw.circle(surface, self.colour, self.position, self.radius)

@@ -1,3 +1,5 @@
+import pygame
+
 class Object:
     position = (0,0)
     colour = (0,0,0)
@@ -10,6 +12,8 @@ class Object:
     gravity = 9.8
     drag_coefficient = 0.1
     air_density = 1.225
+
+    time = 1/60
     
     grounded = False
 
@@ -18,5 +22,10 @@ class Object:
             self.grounded = True
             self.position = (self.position[0], groundHeight - self.radius)
             self.velocity_y = 0
+            return True
         else:
             self.grounded = False
+            return False
+
+    def Draw(self, surface):
+        pygame.draw.circle(surface, self.colour, self.position, self.radius)
