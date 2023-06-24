@@ -5,4 +5,5 @@ class Object:
     mass = 0
     velocity_x = 0
     velocity_y = 0
+    gravity = 9.8
     
