@@ -1,11 +1,25 @@
 import pygame
-from Basic_Functions import ExitGame
+from Basic_Functions import *
 from Bullet import Bullet
+from Exceptions import *
 
+def Main_Menu():
+    global mainMenu
+    for event in pygame.event.get():      
+        if event.type == pygame.QUIT:
+            ExitGame()
+
+        #HANDLE INPUTS WITH KEYS
+        elif event.type == pygame.KEYDOWN:
+            #IF PRESSED ESCAPE
+            if event.key == pygame.K_ESCAPE:
+                #QUIT THE GAME
+                ExitGame()
+            if event.key == pygame.K_SPACE:
+                raise Main_Menu_Break
+                       
 def Gameplay(player):
-    
-    for event in pygame.event.get():
-        
+    for event in pygame.event.get():      
         #HANDLE CLICKING THE X ON THE WINDOW
         if event.type == pygame.QUIT:
             ExitGame()

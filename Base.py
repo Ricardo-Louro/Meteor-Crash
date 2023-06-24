@@ -1,11 +1,11 @@
 #IMPORTS
 import pygame
 import InputManager
+from Exceptions import *
 
 from Player import Player
 from Meteor import Meteor
 from Bullet import Bullet
-
 
 #INITIALIZE PYGAME
 pygame.init()
@@ -30,6 +30,16 @@ clock = pygame.time.Clock()
 
 player = Player()
 
+try:
+    while True:
+        InputManager.Main_Menu()
+        surface.fill((255,0,0))
+        pygame.display.flip()
+        clock.tick(60)
+        
+except Main_Menu_Break:
+    pass
+    
 #GAME LOOP
 while gameLoop: 
     #HANDLE EVENTS
