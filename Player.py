@@ -19,11 +19,18 @@ class Player(Object):
         super().__init__()
         self.normal_force = self.mass * self.gravity
         self.lastBulletTime = pygame.time.get_ticks()
-        
+
+    def WallCheck(self, surfaceWidth):
+        if self.position[0] >= surfaceWidth - self.radius and self.force_applied > 0:
+            self.position = (surfaceWidth - self.radius, self.position[1])
+            self.force_applied = 0
+            
+        elif self.position[0] <= 0 + self.radius and self.force_applied < 0:
+            self.position = (self.radius, self.position[1])
+            self.force_applied = 0        
             
     def Move(self):
         if(self.grounded):
-
             net_force = 0
             coefficient_of_static_friction=0.2
             coefficient_of_kinetic_friction = 0.05

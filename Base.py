@@ -45,6 +45,7 @@ while gameLoop:
     #HANDLE EVENTS
     player.GroundCheck(surfaceHeight)
     InputManager.Gameplay(player)
+    player.WallCheck(surfaceWidth)
     player.Move()
     for bullet in player.bulletList:
         bullet.Move()
