@@ -3,8 +3,8 @@ from Object import Object
 class Bullet(Object):
     colour = (210, 4, 45)
     radius = 5
-    velocity_y = -100
-    mass = 0.5
+    velocity_y = -50
+    mass = 1
 
     def __init__(self, player):
         super().__init__()
@@ -26,7 +26,7 @@ class Bullet(Object):
 
         #FREE FALL
         if(self.velocity_y < self.gravity):
-            self.velocity_y += self.gravity
+            self.velocity_y += self.gravity * 0.25
         else:
             self.velocity_y = self.gravity
 

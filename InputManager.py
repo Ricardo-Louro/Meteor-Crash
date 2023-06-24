@@ -4,7 +4,6 @@ from Bullet import Bullet
 from Exceptions import *
 
 def Main_Menu():
-    global mainMenu
     for event in pygame.event.get():      
         if event.type == pygame.QUIT:
             ExitGame()
@@ -45,3 +44,15 @@ def Gameplay(player):
             player.force_applied = player.speed
         if not(pressed[pygame.K_d] or pressed[pygame.K_a]):
             player.force_applied = 0
+
+def End_Menu():
+    for event in pygame.event.get():      
+        if event.type == pygame.QUIT:
+            ExitGame()
+
+        #HANDLE INPUTS WITH KEYS
+        elif event.type == pygame.KEYDOWN:
+            #IF PRESSED ESCAPE
+            if event.key == pygame.K_ESCAPE:
+                #QUIT THE GAME
+                ExitGame()

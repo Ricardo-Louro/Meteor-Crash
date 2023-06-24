@@ -2,12 +2,11 @@ import pygame
 from Object import Object
 
 class Player(Object):
-    position = (50,50)
     moveSpeed = 10
     colour = (102,255,102)
     radius = 20
     mass = 2
-    speed = 1500
+    speed = 2000
 
     score = 0
 
@@ -15,10 +14,11 @@ class Player(Object):
 
     bulletList = []
 
-    def __init__(self):
+    def __init__(self, surfaceHeight, surfaceWidth):
         super().__init__()
         self.normal_force = self.mass * self.gravity
         self.lastBulletTime = pygame.time.get_ticks()
+        self.position = (surfaceWidth/2, surfaceHeight - self.radius)
 
     def WallCheck(self, surfaceWidth):
         if self.position[0] >= surfaceWidth - self.radius and self.force_applied > 0:
