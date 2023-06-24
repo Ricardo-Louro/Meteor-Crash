@@ -17,7 +17,9 @@ def Gameplay(player):
 
 
         pressed = pygame.key.get_pressed()
-        if pressed[pygame.K_w]:
-            player.Move("up")
-        if pressed[pygame.K_s]:
-            player.Move("down")
+        if pressed[pygame.K_a]:
+            player.force_applied = -1000
+        if pressed[pygame.K_d]:
+            player.force_applied = 1000
+        if not(pressed[pygame.K_d] or pressed[pygame.K_a]):
+            player.force_applied = 0
