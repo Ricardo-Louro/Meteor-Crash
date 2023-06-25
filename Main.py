@@ -71,7 +71,6 @@ except Main_Menu_Break:
     
 #INITIALIZE GAME LOOP
 while True: 
-
     #WHILE THE LIST OF METEORS CONTAINS LESS THAN 6 OF THEM
     while len(meteorList) < 6:
         #CREATE A NEW METEOR AND APPEND IT TO THE LIST
