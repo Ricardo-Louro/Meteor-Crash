@@ -104,8 +104,8 @@ while True:
 
         #ITERATE THROUGH EVERY METEOR IN THE METEOR LIST
         for meteor in meteorList:
-            #CHECK IF THE METEOR IS TOUCHING THE GROUND
-            meteor.GroundCheck(surfaceHeight)
+            #CHECK IF THE METEOR IS TOUCHING THE GROUND (BEING A BIT LENIENT FOR GAMEPLAY PURPOSES)
+            meteor.GroundCheck(surfaceHeight + meteor.radius)
             #IF THEY ARE 
             if meteor.grounded == True:
                 #DECLARE THE MESSAGE WHICH DISPLAYS THE FINAL SCORE
