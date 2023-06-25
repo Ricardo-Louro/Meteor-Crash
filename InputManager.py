@@ -1,5 +1,5 @@
 import pygame
-from Basic_Functions import *
+import sys
 from Bullet import Bullet
 from Exceptions import *
 
@@ -56,3 +56,7 @@ def End_Menu():
             if event.key == pygame.K_ESCAPE:
                 #QUIT THE GAME
                 ExitGame()
+
+def ExitGame():
+    pygame.quit()
+    sys.exit()
