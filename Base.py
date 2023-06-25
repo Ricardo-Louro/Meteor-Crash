@@ -37,6 +37,7 @@ player = Player(surfaceWidth, surfaceHeight)
 
 titleFont = pygame.font.Font('freesansbold.ttf', 150)
 font = pygame.font.Font('freesansbold.ttf', 100)
+smallFont = pygame.font.Font('freesansbold.ttf', 30)
 
 gameTitle = titleFont.render('METEOR CRASH', True, (204,85,0))
 spaceToStart = font.render('Press SPACE to start!', True, (255,210,210))
@@ -103,6 +104,10 @@ while gameLoop:
         bullet.Draw(surface)
     for meteor in meteorList:
         meteor.Draw(surface)
+
+    currentScore = smallFont.render('SCORE: ' + str(player.score), True, (255,210,210))
+    surface.blit(currentScore, (1200, 20))
+    
 
     #FLIP THE DISPLAY
     pygame.display.flip()
